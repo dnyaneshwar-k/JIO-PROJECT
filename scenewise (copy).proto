@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package tutorial;
+
+message B_box{
+  float topx = 1
+  float topy = 2
+  float 
+}
+
+message Objects {
+  string class_name = 1;
+  float conf = 2;
+  repeated B_box bbox = 3;  
+}
+
+message Frame {
+  int32 frameno = 1;
+  repeated Objects objs = 2;
+}
+
+message Scene {
+  string video_id = 1;  
+  int32  s_no = 2;
+  string str_time = 3;
+  string stop_time = 4;  
+  repeated Frame frames = 5;
+}
+
+message Scene_list {
+  repeated Scene scenes = 1;
+}
